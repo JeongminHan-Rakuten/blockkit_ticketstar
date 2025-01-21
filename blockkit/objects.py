@@ -16,6 +16,7 @@ __all__ = [
     "OptionGroup",
     "PlainText",
     "Text",
+    "Link",
     "Style",
     "Emoji",
     "Date",
@@ -74,6 +75,15 @@ class Text(Component):
 
     def __init__(self, *, text: str, style: Optional[Style] = None):
         super().__init__(text=text, style=style)
+
+
+class Link(Component):
+    type: str = "link"
+    url: str = Field(..., min_length=1)
+    style: Optional[Style] = None
+
+    def __init__(self, *, url: str, style: Optional[Style] = None):
+        super().__init__(url=url, style=style)
 
 
 class Emoji(Component):

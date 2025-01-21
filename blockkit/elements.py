@@ -18,6 +18,7 @@ from blockkit.objects import (
     PlainOption,
     PlainText,
     Text,
+    Link,
 )
 from blockkit.validators import (
     validate_date,
@@ -680,7 +681,7 @@ class NumberInput(FocusableElement):
     )
 
 
-RichTextObject = Union[Text, Date, Emoji]
+RichTextObject = Union[Text, Date, Emoji, Link]
 
 
 class RichTextPreformatted(Component):
